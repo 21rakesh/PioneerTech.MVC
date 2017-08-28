@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -141,10 +148,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CompanyDetailsController.cs" />
+    <Compile Include="Controllers\EducationDetailsController.cs" />
+    <Compile Include="Controllers\EmployeeDetailsController.cs" />
+    <Compile Include="Controllers\ProjectDetailsController.cs" />
+    <Compile Include="Controllers\TechnicalDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompanyDetailsModel.cs" />
+    <Compile Include="Models\EducationDetailsModel.cs" />
+    <Compile Include="Models\EmployeeDetailsModel.cs" />
+    <Compile Include="Models\ProjectDetailsModel.cs" />
+    <Compile Include="Models\TechnicalDetailsModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,13 +197,24 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\EmployeeDetails\Index.cshtml" />
+    <Content Include="Views\EmployeeDetails\Create.cshtml" />
+    <Content Include="Views\EmployeeDetails\Edit.cshtml" />
+    <Content Include="Views\EducationDetails\Index.cshtml" />
+    <Content Include="Views\EducationDetails\Create.cshtml" />
+    <Content Include="Views\EducationDetails\Edit.cshtml" />
+    <Content Include="Views\CompanyDetails\Index.cshtml" />
+    <Content Include="Views\CompanyDetails\Create.cshtml" />
+    <Content Include="Views\CompanyDetails\Edit.cshtml" />
+    <Content Include="Views\TechnicalDetails\Index.cshtml" />
+    <Content Include="Views\TechnicalDetails\Create.cshtml" />
+    <Content Include="Views\TechnicalDetails\Edit.cshtml" />
+    <Content Include="Views\ProjectDetails\Index.cshtml" />
+    <Content Include="Views\ProjectDetails\Create.cshtml" />
+    <Content Include="Views\ProjectDetails\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

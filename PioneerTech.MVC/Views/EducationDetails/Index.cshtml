@@ -1,0 +1,28 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>EmployeeID</th>
+        <th>CourseType</th>
+        <th>YearOfPass</th>
+        <th>CourseSpecialisation</th>
+        
+    </tr>
+    @for(int i=0;i<Model.Rows.Count;i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][0]</td>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>
+                <a href="@Url.Action("Edit", "EducationDetails", new {@id=@Model.Rows[i][0] })">Edit</a>
+                <a href="@Url.Action("Delete", "EducationDetails", new {@id=@Model.Rows[i][0] })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Create","EducationDetails")">Add EducationDetails</a>
